@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Agenda {
 
-	ArrayList<Alumno> listaDeAlumnos = new ArrayList<>();
+	private ArrayList<Alumno> listaDeAlumnos = new ArrayList<>();
 
 	public void anadirAlumno(String nombre, String apellido, String dni) {
 		Alumno alumno = new Alumno(nombre, apellido, dni);
