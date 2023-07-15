@@ -39,7 +39,7 @@ class AgendaTest {
 		
 		Alumno alumno = cut.buscarAlumno("98745423J");
 		
-		assertEquals(null, alumno);
+		assertNull(alumno);
 		
 		
 		
