@@ -53,6 +53,8 @@ public class Agenda {
 		
 		if(alumnoEncontrado != null) {
 			alumnoEncontrado.setApellido(nuevoApellido);	
+		} else {
+			throw new RuntimeException("El alumno no existe");
 		}
 		
 	}
