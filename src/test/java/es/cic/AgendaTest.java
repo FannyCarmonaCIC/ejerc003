@@ -45,17 +45,56 @@ class AgendaTest {
 	}
 	
 	@Test
-	public void testEdicionNombreDeAlumno() {
+	public void testCambioDeNombre() {
 		
 		cut.anadirAlumno("Joselito", "Pérez", "76533322K");
 		cut.anadirAlumno("Pepito", "Jiménez", "98745423J");
 		cut.anadirAlumno("Katarina", "López", "45623497M");
 		
 		cut.modificarNombreAlumno("76533322K", "Jose");
+		cut.modificarNombreAlumno("98745423J", "Pepe");
 		
 		Alumno alumno = cut.buscarAlumno("76533322K");
+		Alumno alumno2 = cut.buscarAlumno("98745423J");
 		
-		assertEquals("Jose", alumno.getNombre());	
+		assertEquals("Jose", alumno.getNombre());
+		assertEquals("Pepe", alumno2.getNombre());	
+		
+	}
+	
+	@Test
+	public void testCambioDeApellido() {
+		
+		cut.anadirAlumno("Joselito", "Pérez", "76533322K");
+		cut.anadirAlumno("Pepito", "Jiménez", "98745423J");
+		cut.anadirAlumno("Katarina", "López", "45623497M");
+		
+		cut.modificarApellidoAlumno("76533322K", "Perezoso");
+		cut.modificarApellidoAlumno("98745423J", "Jimeno");
+		
+		Alumno alumno = cut.buscarAlumno("76533322K");
+		Alumno alumno2 = cut.buscarAlumno("98745423J");
+		
+		assertEquals("Perezoso", alumno.getApellido());
+		assertEquals("Jimeno", alumno2.getApellido());
+		
+	}
+	
+	@Test
+	public void testCambioDni() {
+		
+		cut.anadirAlumno("Joselito", "Pérez", "76533322K");
+		cut.anadirAlumno("Pepito", "Jiménez", "98745423J");
+		cut.anadirAlumno("Katarina", "López", "45623497M");
+		
+		cut.modificarDniAlumno("76533322K", "11111111K");
+		cut.modificarDniAlumno("98745423J", "22222222J");
+		
+		Alumno alumno = cut.buscarAlumno("11111111K");
+		Alumno alumno2 = cut.buscarAlumno("22222222J");
+		
+		assertEquals("Joselito", alumno.getNombre());
+		assertEquals("Jiménez", alumno2.getApellido());
 		
 	}
 

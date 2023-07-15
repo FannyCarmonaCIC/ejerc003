@@ -46,5 +46,25 @@ public class Agenda {
 		}
 		
 	}
+	
+	public void modificarApellidoAlumno(String dni, String nuevoApellido) {
+		
+		Alumno alumnoEncontrado = buscarAlumno(dni);		
+		
+		if(alumnoEncontrado != null) {
+			alumnoEncontrado.setApellido(nuevoApellido);	
+		}
+		
+	}
+	
+	public void modificarDniAlumno(String dni, String nuevoDni) {
+		
+		Alumno alumnoEncontrado = buscarAlumno(dni);		
+		
+		if(alumnoEncontrado != null) {
+			alumnoEncontrado.setDni(nuevoDni);
+		}
+		
+	}
 
 }
