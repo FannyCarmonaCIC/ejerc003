@@ -39,10 +39,23 @@ class AgendaTest {
 		
 		Alumno alumno = cut.buscarAlumno("98745423J");
 		
-		assertNull(alumno);
+		assertNull(alumno);		
 		
 		
+	}
+	
+	@Test
+	public void testEdicionNombreDeAlumno() {
 		
+		cut.anadirAlumno("Joselito", "Pérez", "76533322K");
+		cut.anadirAlumno("Pepito", "Jiménez", "98745423J");
+		cut.anadirAlumno("Katarina", "López", "45623497M");
+		
+		cut.modificarNombreAlumno("76533322K", "Jose");
+		
+		Alumno alumno = cut.buscarAlumno("76533322K");
+		
+		assertEquals("Jose", alumno.getNombre());	
 		
 	}
 
