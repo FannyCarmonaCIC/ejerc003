@@ -7,23 +7,42 @@ import org.junit.jupiter.api.Test;
 
 class AgendaTest {
 	
-	
+	private Agenda cut;
 
 	@BeforeEach
-	void setUp() throws Exception {
+	public void setUp() throws Exception {
+		cut = new Agenda();
 	}
 
 	@Test
-	void testCreacionDeAlumno() {
+	public void testCreacionDeAlumno() {		
+			
+		cut.anadirAlumno("Joselito", "Pérez", "76533322K");
 		
-		Agenda cut = new Agenda();	
-		cut.anadirAlumno("Joselito", "Pérez", "76533322k");
-		
-		Alumno alumno = cut.buscarAlumno("76533322k");
+		Alumno alumno = cut.buscarAlumno("76533322K");
 		
 		assertEquals("Joselito", alumno.getNombre());
 		assertEquals("Pérez", alumno.getApellido());
-		assertEquals("76533322k", alumno.getDni());
+		assertEquals("76533322K", alumno.getDni());
+		
+	}
+	
+	@Test
+	public void testBorradoDeAlumno() {
+		
+		cut.anadirAlumno("Joselito", "Pérez", "76533322K");
+		cut.anadirAlumno("Pepito", "Jiménez", "98745423J");
+		cut.anadirAlumno("Katarina", "López", "45623497M");
+		
+		cut.buscarAlumno("98745423J");		
+		cut.borrarAlumno("98745423J");
+		
+		Alumno alumno = cut.buscarAlumno("98745423J");
+		
+		assertEquals(null, alumno);
+		
+		
+		
 		
 	}
 

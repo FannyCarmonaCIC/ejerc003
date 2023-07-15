@@ -24,5 +24,17 @@ public class Agenda {
 		
 		return alumno;
 	}
+	
+	public void borrarAlumno(String dni) {
+		
+		for (int i = 0; i < listaDeAlumnos.size(); i++) {
+			Alumno alumnoLista = listaDeAlumnos.get(i);
+			 if (alumnoLista.getDni().equals(dni)) { 
+				 listaDeAlumnos.remove(alumnoLista);
+				 }
+			 
+		}
+		
+	}
 
 }
